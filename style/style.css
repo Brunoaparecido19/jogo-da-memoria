@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body{
+    font-family: 'Righteous', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#gameBoard{
+    max-width: 700px;
+    display:grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr ;
+    gap: 20px;
+}
+.card{
+    height: 150px;
+    width: 100px;
+    position: relative;
+
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+.card_front, .card_back{
+    height: 100%;
+    width: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+    backface-visibility: hidden;
+}
+.flip{
+    transform: rotateY(180deg);
+}
+.card_front{
+    background-color: #101c2c;
+    transform: rotateY(180deg);
+}
+.card_back{
+    background-color: rgb(24, 24, 24);
+    color: white;
+    text-shadow: 2px 2px 2px rgb(7, 7, 150);
+    font-size: 30px;
+}
+#gameOn{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(245, 221, 0);
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    font-size: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+#start{
+    padding: 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    transition-delay: 100ms;
+}
+#start:hover{
+    background-color: white;
+    color: black;
+    transition-delay: 100ms;
+}
+#gameOver{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color:white;
+    font-size: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+}
+#restart{
+    padding: 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(199, 17, 17);
+    color: white;
+    font-size: 20px;
+    transition-delay: 100ms;
+}
+#restart:hover{
+    background-color: red;
+    transition-delay: 100ms;
+}
